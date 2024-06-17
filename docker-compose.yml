@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  my-app:
+    image: ashniike/nestapp:latest
+    ports:
+      - "3000:3000" 
