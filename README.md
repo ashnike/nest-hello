@@ -25,8 +25,6 @@ export class AppController {
 npm run build
 
 ## Install PM2 and start NestJS app with PM2
-sudo npm install -g pm2
-pm2 start dist/main.js --name hello-world-app
-pm2 startup && pm2 save
+sudo npm install -g pm2 && pm2 start dist/main.js --name hello-world-app && pm2 startup && pm2 save
 
 
