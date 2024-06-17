@@ -3,7 +3,7 @@ FROM node:20-alpine as build
 WORKDIR /app
 COPY ./app/package*.json ./
 
-RUN npm install --only=production
+RUN npm install
 
 COPY ./app .
 
