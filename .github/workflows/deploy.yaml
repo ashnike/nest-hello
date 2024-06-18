@@ -17,5 +17,13 @@ jobs:
 
     - name: Deploy Dockerized Application
       run: |
-        docker-compose down
-        docker-compose up -d --build
+        cd $GITHUB_WORKSPACE
+        # Check if there are any running containers
+        if [ "$(docker-compose ps -q)" ]; then
+          echo "Docker Compose is running. Bringing it down..."
+          docker-compose down
+        else
+          echo "Docker Compose is not running."
+        fi
+        # Bring the application up
+        docker-compose up -d
